@@ -1,0 +1,23 @@
+{
+  "name": "clothing_store",
+  "description": "",
+  "main": "",
+  "authors": [
+    "dvson-sun <dao.vinh.son@sun-asterisk.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dvson-sun/HN_Intern_PHP01-03-Clothing-Store",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0",
+    "Font-Awesome": "^6.1.1"
+  }
+}
