@@ -1,26 +1,67 @@
 <div class="colorlib-loader"></div>
-<div id="page">
-    <nav class="colorlib-nav" role="navigation">
-        <div class="top-menu">
-            <div class="container">
-                <div class="row">
-                    <div class="col-2">
-                        <div id="colorlib-logo"><a href="{{ route('home') }}"><img src="{{ asset('store/images/logo.png') }}" alt=""></a></div>
+	<!-- Header -->
+	<header>
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
+			<!-- Topbar -->
+			<div class="top-bar">
+				<div class="content-topbar flex-sb-m h-full container">
+					<div class="left-top-bar">
+						Free shipping for standard order over $100
+					</div>
+
+					<div class="right-top-bar flex-w h-full">
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
+							Help & FAQs
+						</a>
+                        
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
+							EN
+						</a>
+
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
+							USD
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="wrap-menu-desktop">
+                <nav class="limiter-menu-desktop container">
+                    <div class="logo">
+                        	<!-- Logo desktop -->		
+                        <div id="colorlib-logo"><a href="{{ route('home') }}"><img src="/images/icons/logo-01.png" alt=""></a></div>
                     </div>
-                    <div class="col-10 text-right menu-1">
-                        <ul>
-                            <li class="active"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
-                            <li><a href="{{ route('product.shop') }}">{{ __('Search') }}</a></li>
-                            <li><a href="about.html">{{ __('About') }}</a></li>
-                            <li><a href="contact.html">{{ __('Contact') }}</a></li>
-                            <li class="has-dropdown">
-                                <a href=""><i class="fa fa-globe" aria-hidden="true"></i> {{ __('Language') }}</a>
-                                <ul class="dropdown">
+
+               	<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li>
+								<a href="{{ route('home') }}" style="a:hover{color: #6c7ae0;}">{{ __('Home') }}</a>
+							</li>
+
+							<li>
+                            <a href="{{ route('product.shop') }}" style="a:hover{color: #6c7ae0;}">Shop</a>
+							</li>
+
+							<li >
+							<a href="about.html" style="a:hover{color: #6c7ae0;}">{{ __('About') }}</a>
+							</li>
+
+							<li>
+                            <a href="contact.html" style="a:hover{color: #6c7ae0;}">{{ __('Contact') }}</a>
+							</li>
+
+                            <li >
+                            <a href=""><i class="fa fa-globe" aria-hidden="true" style="a:hover{color: #6c7ae0;}"></i> {{ __('Language') }}</a>
+								<ul class="sub-menu">
                                     <li><a href="{!! route('language', ['en']) !!}"> {{__('English') }}</a></li>
                                     <li><a href="{!! route('language', ['vi']) !!}"> {{__('Vietnamese') }}</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{route('cart.showCart')}}"><i class="icon-shopping-cart"></i> {{ __('Cart')}} [{{Cart::count()}}]</a></li>
+								</ul>
+							</li>
+
+					   
+                            <li style="padding-left: 250px;"><a href="{{route('cart.showCart')}}" style="a:hover{color: #6c7ae0;}"><i class="zmdi zmdi-shopping-cart"></i> {{ __('Cart')}} [{{Cart::count()}}]</a></li>
                             @if (Route::has('login'))
                             @auth
                                 <li class="has-dropdown">
@@ -74,87 +115,48 @@
                                         </ul>
                                     </ul>
                                 </li>
-                                <li class="has-dropdown">
-                                    <a href="shop.html">{{ __('Account') }} <i class="fa fa-sort-desc"></i></a>
-                                    <ul class="dropdown">
-                                        <li><a href="cart.html">{{ Auth::user()->fullname }}</a></li>
-                                        <li>
-                                            <form action="{{ route('logout') }}" method="post">
-                                                <input type="submit" class="btn-logout" value="{{ __('Logout') }}">
+                            
+                                <!-- <input type="submit" class="btn-logout" value="{{ __('Logout') }}"> -->
+                                <li class="has-dropdown" style="color: black;">
+                                    <a href="shop.html" style="a:hover{color: #6c7ae0;}">{{ __('Account') }} <i class="fa fa-sort-desc"></i></a>
+                                    <ul class="sub-menu">
+                                        <li style="text-align: left;"><a href="cart.html">{{ Auth::user()->fullname }}</a></li>
+                           
+                                        <form action="{{ route('logout') }}" method="post">         
+                                            <input type="submit" class="btn-logout" value="{{ __('Logout') }}" style="color: gray;  padding: 5px 0 0 20px;" >	    
                                                 @csrf
                                             </form>
+                                           
                                         </li>
                                     </ul>
                                 </li>
                             @else
-                                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('Login')}} /</a>
+                                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline" style="color: black;">{{ __('Login')}} /</a>
                                 @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('Register')}} </a>
+                                    <a href="{{ route('register') }}" class="text-sm text-gray-700 dark:text-gray-500 underline" style="color: black;">{{ __('Register')}} </a>
                                 @endif
                             @endauth
                             @endif
-                        </ul>
-                    </div>
-                </div>
+						</ul>
+					</div>	
+
+                </nav>
             </div>
-        </div>
-</div>
-</nav>
-<aside id="colorlib-hero">
-    <div class="flexslider">
-        <ul class="slides">
-            <li class="slide-1">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 col-md-pull-2 col-sm-12 col-xs-12 slider-text">
-                            <div class="slider-text-inner">
-                                <div class="desc">
-                                    <h1 class="head-1">{{ __('Sale')}}</h1>
-                                    <h2 class="head-3">45%</h2>
-                                    <p class="category"><span>{{ __('New designs')}}</span></p>
-                                    <p><a href="#" class="btn btn-primary">{{ __('Connect with store')}}</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="slide-2">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 col-md-pull-2 col-sm-12 col-xs-12 slider-text">
-                            <div class="slider-text-inner">
-                                <div class="desc">
-                                    <h1 class="head-1">Sale</h1>
-                                    <h2 class="head-3">45%</h2>
-                                    <p class="category"><span>Những mẫu thiết kế mới</span></p>
-                                    <p><a href="#" class="btn btn-primary">Kết nối với shop</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="slide-3">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 slider-text">
-                            <div class="slider-text-inner">
-                                <div class="desc">
-                                    <h1 class="head-1">Sale</h1>
-                                    <h2 class="head-3">45%</h2>
-                                    <p class="category"><span>Những mẫu thiết kế mới</span></p>
-                                    <p><a href="#" class="btn btn-primary">Kết nối với shop</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</aside>
-</div>
+
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="/images/icons/icon-close2.png" alt="CLOSE">
+				</button>
+
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+
+</header>

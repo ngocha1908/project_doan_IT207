@@ -1,5 +1,5 @@
 @extends('store.master.master')
-@section('title','Vietpro Store - Sản phẩm ')
+@section('title','Clothing Store - Sản phẩm ')
 @section('content')
 <!-- main -->
 <div class="colorlib-shop">
@@ -41,6 +41,7 @@
                                     @endif
                                 @endforeach
                             </select>
+                           
                             <h5 class="mt-5">{{ __('Price Range')}}</h5>
                             <div class="row">
                                 <div class="col-md-12">
