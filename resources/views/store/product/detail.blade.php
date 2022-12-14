@@ -17,9 +17,9 @@
 							<div class="slick3 gallery-lb">
 								<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
 									<div class="wrap-pic-w pos-relative">
-                                    @foreach ($detail->images as $key => $image)
+                                    @foreach ($detail->images as $key=>$image)
                                                 <div class="carousel-item @if ($key == config('app.zero')) active @endif">
-                                                    <img class="d-block" src="../uploads/{{ $image->name }}" alt="Ảnh sản phẩm">
+                                                    <img class="d-block" src="../.. /uploads/{{ $image->name }}" alt="Ảnh sản phẩm">
                                                 </div>
                                             @endforeach
 
@@ -29,19 +29,9 @@
 									</div>
 								</div>
 
-								<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
-									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
-
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
-											<i class="fa fa-expand"></i>
-										</a>
-									</div>
-								</div>
-
 								<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
+										<img src="../.. /uploads/{{ $image->name }}" alt="IMG-PRODUCT">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
 											<i class="fa fa-expand"></i>
@@ -126,6 +116,7 @@
                                         </div>
                                     @endif
                                     @if ($detail->status)
+									<input type="hidden" name="id" value="{{$detail->id}}">
                                     <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit">
                                     {{ __('Add to cart') }}
 									</button>

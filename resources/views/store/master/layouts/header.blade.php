@@ -44,14 +44,7 @@
                             <a href="{{ route('product.shop') }}" style="a:hover{color: #6c7ae0;}">Shop</a>
 							</li>
 
-							<li >
-							<a href="about.html" style="a:hover{color: #6c7ae0;}">{{ __('About') }}</a>
-							</li>
-
-							<li>
-                            <a href="contact.html" style="a:hover{color: #6c7ae0;}">{{ __('Contact') }}</a>
-							</li>
-
+					
                             <li >
                             <a href=""><i class="fa fa-globe" aria-hidden="true" style="a:hover{color: #6c7ae0;}"></i> {{ __('Language') }}</a>
 								<ul class="sub-menu">
@@ -61,7 +54,7 @@
 							</li>
 
 					   
-                            <li style="padding-left: 250px;"><a href="{{route('cart.showCart')}}" style="a:hover{color: #6c7ae0;}"><i class="zmdi zmdi-shopping-cart"></i> {{ __('Cart')}} [{{Cart::count()}}]</a></li>
+                            <li style="padding-left: 430px;"><a href="{{route('cart.showCart')}}" style="a:hover{color: #6c7ae0;}"><i class="zmdi zmdi-shopping-cart"></i> {{ __('Cart')}} [{{Cart::count()}}]</a></li>
                             @if (Route::has('login'))
                             @auth
                                 <li class="has-dropdown">

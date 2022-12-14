@@ -65,7 +65,7 @@ class ProductController extends Controller
             $this->productRepo->create([
                 'name' => $request->name,
                 'code' => $request->code,
-                'slug' => Slug::getSlug($request->name),
+                'slug' => $request->name,
                 'price' => $request->price,
                 'description' => $request->description,
                 'is_featured' => $request->is_featured,
@@ -163,7 +163,7 @@ class ProductController extends Controller
             [
                 'name' => $request->name,
                 'code' => $request->code,
-                'slug' => Slug::getSlug($request->name),
+                'slug' => $request->name,
                 'description' => $request->description,
                 'price' => $request->price,
                 'is_featured' => $request->is_featured,
