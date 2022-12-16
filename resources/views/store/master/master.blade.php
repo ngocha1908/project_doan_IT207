@@ -6,7 +6,6 @@
 <body>
         <!-- header -->
         @include('store.master.layouts.header')
-
         <!-- End header  -->
 
         <!-- main -->
@@ -16,7 +15,7 @@
         <!-- footer -->
         @include('store.master.layouts.footer')
         <!--end  footer -->
-    </div>
+   
 
     <!-- jQuery -->
     <script src="{{ asset('bower_components/jquery/dist/jquery.min.js')}}" type="text/javascript"></script>
